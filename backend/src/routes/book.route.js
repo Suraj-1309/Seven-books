@@ -1,7 +1,11 @@
 import express from "express";
-import { Book } from "../modules/books.module";
 import { Router } from "express";
+import { addBook } from "../controller/book.controller.js";
+import {hello} from  "../controller/hello.controller.js";
 
 const router = Router();
 
-router.post("/add").post(addBook);
+router.post('/addBook', addBook);
+router.get('/', hello);
+
+export default router;
